@@ -20,7 +20,7 @@ And in your code:
     (ns my-ns
       (:use [org.dipert.reconfig :only (reconfig)]))
 
-To store an atom containing your configuration:
+To store an agent containing your configuration:
 
     (def config (reconfig "/tmp/lol.clj" {:pants "on"}))
 
