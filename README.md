@@ -13,7 +13,7 @@ I've only tested with Sun's JVM, and it only works on *nix.
 If you're using Leiningen, in your project.clj:
 
     (defproject my-project "1.0.0-SNAPSHOT"
-      :dependencies [[reconfig "1.0.0"]])
+      :dependencies [[reconfig "1.0.1"]])
 
 And in your code:
 
