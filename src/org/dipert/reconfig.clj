@@ -16,17 +16,18 @@
     (do (warn (format "[reconfig] Config file '%s' doesn't exist" config-file)))))
 
 (defn reconfig
-  "Reads filename f of Clojure data whenever a SIGHUP is caught by the JVM,
-  and the file's contents are stored as a data structure in the atom this 
-  function returns.
+  "Reads the contents of the Clojure file f, stores
+  this is an atom, and returns the atom.
 
-  If on first reading the config file isn't readable, default is used.
+  If f cannot be read, the atom's content is the
+  default argument.
 
-  If on subsequent readings the config file isn't readable, the
-  atom's contents are not changed."
+  When the JVM receives a SIGHUP, f is read again
+  and the contents of the atom are updated.  If
+  reading f fails, the atom's contents are not modified."
   [f default]
   {:pre [(or (string? f)
-             (= java.io.File
+             (= File
                 (class f)))]}
   (let [config-file (file f)
         config-atom (atom (if-let [config (read-config config-file)]
