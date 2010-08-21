@@ -46,3 +46,7 @@ with `clojure.contrib.logging` at the `info` and `warn` levels.
 
 * The Stuarts for feedback
 
+## License
+
+Eclipse Public License, same as Clojure.
+
