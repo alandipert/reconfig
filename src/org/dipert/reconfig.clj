@@ -27,8 +27,7 @@
   reading f fails, the atom's contents are not modified."
   [f default]
   {:pre [(or (string? f)
-             (= File
-                (class f)))]}
+             (= File (class f)))]}
   (let [config-file (file f)
         config-atom (atom (if-let [config (read-config config-file)]
                             config
