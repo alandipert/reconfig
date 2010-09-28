@@ -10,7 +10,8 @@
   (if (.exists config-file)
     (try
       (info (format "[reconfig] Reading config file '%s'" config-file))
-      (read (PushbackReader. (reader config-file)))
+      (binding [*read-eval* false]
+        (read (PushbackReader. (reader config-file))))
       (catch Exception e
         (warn (format "[reconfig] Reading config file '%s' failed with %s" config-file e))))
     (do (warn (format "[reconfig] Config file '%s' doesn't exist" config-file)))))
