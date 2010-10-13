@@ -1,7 +1,7 @@
 (ns org.dipert.reconfig
   "Configuration reloading by SIGHUP
   Only works on Mac OS X and Linux with the Sun JVM."
-  (:use [clojure.contrib.io :only (file reader)]
+  (:use [clojure.java.io :only (file reader)]
         [clojure.contrib.logging :only (info warn)])
   (:import (sun.misc Signal SignalHandler)
            (java.io File PushbackReader)))
