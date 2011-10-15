@@ -6,14 +6,22 @@ receives a SIGHUP.
 Configuration files are Clojure code, and can contain 
 any Clojure data structures.
 
-I've only tested with Sun's JVM, and it only works on *nix.
+I've only tested with Sun's JVM 6, and it only works on *nix.
 
 ## Usage
 
 If you're using Leiningen, in your project.clj:
 
     (defproject my-project "1.0.0-SNAPSHOT"
-      :dependencies [[reconfig "1.0.1"]])
+      :dependencies [[reconfig "1.0.4"]])
+
+If you're using Maven, in your pom.xml:
+
+    <dependency>
+      <groupId>org.dipert</groupId>
+      <artifactId>reconfig</artifactId>
+      <version>1.0.4</version>
+    </dependency>
 
 And in your code:
 
@@ -40,7 +48,7 @@ and send your application a SIGHUP:
 ## Logging
 
 `reconfig` logs SIGHUPS and the success and failure of file reading
-with `clojure.contrib.logging` at the `info` and `warn` levels.
+with `tools.logging` at the `info` and `warn` levels.
 
 ## Acknowledgements
 
@@ -48,5 +56,6 @@ with `clojure.contrib.logging` at the `info` and `warn` levels.
 
 ## License
 
-Eclipse Public License, same as Clojure.
+Copyright (C) 2011 Alan Dipert
 
+Distributed under the Eclipse Public License, the same as Clojure.
