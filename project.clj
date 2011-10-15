@@ -1,5 +1,4 @@
-(defproject reconfig "1.0.3"
+(defproject reconfig "1.0.4"
   :description "Catch signals and reload a config file"
-  :dependencies [[org.clojure/clojure "1.3.0-alpha1"]
-                 [org.clojure.contrib/logging "1.3.0-alpha1"]]
-  :dev-dependencies [[swank-clojure "1.3.0-SNAPSHOT"]])
+  :dependencies [[org.clojure/clojure "1.3.0"]
+                 [org.clojure/tools.logging "0.2.3"]])
